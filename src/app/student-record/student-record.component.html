@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <label>Name</label>
+            <input type="text" class="form-control" style="width:400px" [(ngModel)]=studentName />
+            <label>Age</label>
+            <input type="text" class="form-control" style="width:400px" [(ngModel)]="studentAge" />
+            <label>Grade</label>
+            <input type="text" class="form-control" style="width:400px" [(ngModel)]="studentGrade" />
+
+            <hr>
+            <button class="btn btn-primary" style="margin:5px;" (click)="addStudentRecord()" (click)="onAdd()"> Add
+                Record</button>
+
+
+            <button class="btn btn-primary" style="margin:5px" (click)="onShow()">Show Records</button>
+            <table class="table table-responsive table-striped" *ngIf="showRecord">
+                <thead>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Grade</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let record of studentRecord">
+                        <td>{{record.studentName}}</td>
+                        <td>{{record.studentAge}}</td>
+                        <td>{{record.studentGrade}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
